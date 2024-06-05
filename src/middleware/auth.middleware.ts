@@ -19,6 +19,7 @@ export const UserAuthenticate = (
     return;
   }
   const token = req.headers.token;
+  console.log("token -------->",token)
   if (!token) {
     console.log(`Token not found in API: ${req.path}`);
     return res.status(401).send(
@@ -48,7 +49,7 @@ export const UserAuthenticate = (
         } else {
           console.log("payload------>", payload);
           if (payload) {
-            const userId = payload.userId;
+            const userId = payload.userid;
             console.log(userId, "user id from token");
             if (userId) {
               // Attach user details to the request object

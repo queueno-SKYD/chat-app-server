@@ -13,7 +13,7 @@ const EXPRESS_PORT = 4000;
 app.use(cookieParser());
 app.use(cors({
   credentials: true,
-  origin: ["http://localhost:4000"]
+  origin: ["http://localhost:3000"]
 }));
 // Route to set a cookie
 app.get("/setcookie", (req: Request, res: Response) => {
