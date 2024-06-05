@@ -18,7 +18,7 @@ export const UserAuthenticate = (
     next()
     return;
   }
-  const token = req.headers["authorization"];
+  const token = req.headers.token;
   if (!token) {
     console.log(`Token not found in API: ${req.path}`);
     return res.status(401).send(
@@ -32,7 +32,7 @@ export const UserAuthenticate = (
   try {
     console.log("Token found : ", { token });
     jwt.verify(
-      token,
+      String(token),
       JWT_SECRET,
       // Replace 'your-secret-key' with your actual secret key
       (err, payload: any) => {
