@@ -18,7 +18,7 @@ export const UserAuthenticate = (
     next()
     return;
   }
-  const token = req.header("Authorization");
+  const token = req.headers["authorization"];
   if (!token) {
     console.log(`Token not found in API: ${req.path}`);
     return res.status(401).send(
