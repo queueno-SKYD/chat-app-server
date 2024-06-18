@@ -19,7 +19,6 @@ export const UserAuthenticate = (
     return;
   }
   const token = req.headers.token;
-  console.log("token -------->",token)
   if (!token) {
     console.log(`Token not found in API: ${req.path}`);
     return res.status(401).send(
@@ -31,7 +30,6 @@ export const UserAuthenticate = (
     );
   }
   try {
-    console.log("Token found : ", { token });
     jwt.verify(
       String(token),
       JWT_SECRET,
@@ -47,7 +45,6 @@ export const UserAuthenticate = (
             })
           );
         } else {
-          console.log("payload------>", payload);
           if (payload) {
             const userId = payload.userid;
             console.log(userId, "user id from token");
@@ -57,13 +54,6 @@ export const UserAuthenticate = (
                 .then(async (response) => {
                   res.locals.user = response;
                   next();
-                  // return res.status(200).send(
-                  //   new HTTPResponse({
-                  //     statusCode: HttpStatus.OK.code,
-                  //     httpStatus: HttpStatus.OK.status,
-                  //     data: response,
-                  //   })
-                  // );
                 })
                 .catch((err) => {
                   return res.status(409).send(

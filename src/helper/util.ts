@@ -8,3 +8,9 @@ export const registerValidation = Joi.object({
     passwordConfirm: Joi.string().required(),
     userType: Joi.number().max(1).min(0),
   });
+
+  // Generate a random 6-digit number
+  export const generateOTP = () => {
+    const otp = Math.floor(100000 + Math.random() * 900000);
+    return otp;
+  };

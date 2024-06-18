@@ -105,3 +105,15 @@ export const ResetPasswordMail = (appName: string, userName: string, otp: number
   </body>
   </html>`  
 }
+
+export const EmailVerifyMail = (appName: string,otp: number)=>{
+  return `
+  <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+      <h2>Welcome to Our Service!</h2>
+      <p>Dear user,</p>
+      <p>Thank you for registering with us. To complete your registration, please use the following OTP:</p>
+      <p style="font-size: 24px; font-weight: bold; color: #000;">${otp}</p>
+      <p>This OTP is valid for 10 minutes. Please do not share this OTP with anyone.</p>
+      <p>Best regards,<br/>${appName} Team</p>
+    </div>`
+}
