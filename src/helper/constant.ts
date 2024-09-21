@@ -1,5 +1,5 @@
 const JWT_SECRET = "skyd_group";
-const POSTGRESS_SQL_URL = "postgres://skyd:XF4ra9LIQxlP097WQEDENRJSN4jAUJJm@dpg-cp90f1sf7o1s739psii0-a.virginia-postgres.render.com/skyd_db";
+const POSTGRESS_SQL_URL = "postgresql://commondb_9eag_user:ufSFo4bSNH8hTsSpDu2JQhu75Xe3rUP9@dpg-crmq86t6l47c739ukesg-a.virginia-postgres.render.com/commondb_9eag";
 const JWT_EXPIRE_TIME = '2m';
 const COOKIEE_EXPIRE_TIME = 60 * 1000;
 const COOKIEE_SECRET_KEY="skyd@#1213"
